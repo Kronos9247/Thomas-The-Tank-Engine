@@ -56,6 +56,7 @@ public class Main extends Thread implements WindowListener, KeyListener {
 			double y = Math.sin(Math.toRadians(r)) * i + Math.random() * f;
 			
 			frame.setBounds((int)((dim.getWidth()/2 - 500/2) + x), (int)((dim.getHeight()/2 - 500/2) + y), 500, 500);
+			
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
