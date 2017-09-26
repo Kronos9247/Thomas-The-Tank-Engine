@@ -75,36 +75,20 @@ public class Main extends Thread implements WindowListener, KeyListener {
 		return frame;
 	}
 	
-	public synchronized static void playSound(final String url) {
-//		Clip clip;
-//		try {
-//			clip = AudioSystem.getClip();
-//	        AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-//	        		Main.class.getClass().getResourceAsStream("/" + url));
-//	        clip.open(inputStream);
-//	        clip.loop(Integer.MAX_VALUE);
-//	        clip.start(); 
-//		} catch (LineUnavailableException e) {
-//			e.printStackTrace();
-//		} catch (UnsupportedAudioFileException e) {
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-		
+	public synchronized static void playSound(final String url) {		
 		try {
-		URL url2 = Main.class.getClass().getResource("/Thomas_The_Tank_Engine.wav");
-        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url2);
-        Clip clip = AudioSystem.getClip();
-        clip.open(audioIn);
-        clip.start();
-	} catch (LineUnavailableException e) {
-		e.printStackTrace();
-	} catch (UnsupportedAudioFileException e) {
-		e.printStackTrace();
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
+			URL url2 = Main.class.getClass().getResource("/Thomas_The_Tank_Engine.wav");
+			AudioInputStream audioIn = AudioSystem.getAudioInputStream(url2);
+			Clip clip = AudioSystem.getClip();
+			clip.open(audioIn);
+			clip.start();
+		} catch (LineUnavailableException e) {
+			e.printStackTrace();
+		} catch (UnsupportedAudioFileException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -114,10 +98,7 @@ public class Main extends Thread implements WindowListener, KeyListener {
 	}
 
 	@Override
-	public void windowActivated(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowActivated(WindowEvent arg0) {}
 
 	@Override
 	public void windowClosed(WindowEvent arg0) {
@@ -126,34 +107,19 @@ public class Main extends Thread implements WindowListener, KeyListener {
 	}
 
 	@Override
-	public void windowClosing(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowClosing(WindowEvent arg0) {}
 
 	@Override
-	public void windowDeactivated(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowDeactivated(WindowEvent arg0) {}
 
 	@Override
-	public void windowDeiconified(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowDeiconified(WindowEvent arg0) {}
 
 	@Override
-	public void windowIconified(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowIconified(WindowEvent arg0) {}
 
 	@Override
-	public void windowOpened(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowOpened(WindowEvent arg0) {}
 
 	public static boolean startagain;
 	
@@ -165,15 +131,9 @@ public class Main extends Thread implements WindowListener, KeyListener {
 	}
 
 	@Override
-	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void keyReleased(KeyEvent arg0) {}
 
 	@Override
-	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void keyTyped(KeyEvent arg0) {}
 
 }
