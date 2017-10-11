@@ -24,6 +24,18 @@ public class Thomas extends JPanel {
 		}
 	}
 	
+	public void trigger() {
+		try {
+			img = ImageIO.read(Thomas.class.getResourceAsStream("/Thomas_Tank_Engine_V2.jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		repaint();
+		
+		System.out.println("TRIGGERED!");
+	}
+	
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);

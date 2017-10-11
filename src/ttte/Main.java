@@ -26,8 +26,13 @@ public class Main extends Thread implements WindowListener, KeyListener {
 	
 	private double timer;
 	
+	private boolean done;
+	
+	private Thomas thomas;
+	
 	public Main() {
-		frame = gen(new Thomas());
+		thomas = new Thomas();
+		frame = gen(thomas);
 		frame.addWindowListener(this);
 		frame.addKeyListener(this);
 	}
@@ -50,13 +55,17 @@ public class Main extends Thread implements WindowListener, KeyListener {
 					
 					gen(new Triggered()).setBounds((int)(Math.random() * dim.getWidth()), (int)(Math.random() * dim.getHeight()), 500, 500);
 				}
+				
+				if(!done) {
+					thomas.trigger();
+					done = true;
+				}
 			}
 			
 			double x = Math.cos(Math.toRadians(r)) * i + Math.random() * f;
 			double y = Math.sin(Math.toRadians(r)) * i + Math.random() * f;
 			
 			frame.setBounds((int)((dim.getWidth()/2 - 500/2) + x), (int)((dim.getHeight()/2 - 500/2) + y), 500, 500);
-			
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
@@ -76,20 +85,36 @@ public class Main extends Thread implements WindowListener, KeyListener {
 		return frame;
 	}
 	
-	public synchronized static void playSound(final String url) {		
+	public synchronized static void playSound(final String url) {
+//		Clip clip;
+//		try {
+//			clip = AudioSystem.getClip();
+//	        AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+//	        		Main.class.getClass().getResourceAsStream("/" + url));
+//	        clip.open(inputStream);
+//	        clip.loop(Integer.MAX_VALUE);
+//	        clip.start(); 
+//		} catch (LineUnavailableException e) {
+//			e.printStackTrace();
+//		} catch (UnsupportedAudioFileException e) {
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+		
 		try {
-			URL url2 = Main.class.getClass().getResource("/Thomas_The_Tank_Engine.wav");
-			AudioInputStream audioIn = AudioSystem.getAudioInputStream(url2);
-			Clip clip = AudioSystem.getClip();
-			clip.open(audioIn);
-			clip.start();
-		} catch (LineUnavailableException e) {
-			e.printStackTrace();
-		} catch (UnsupportedAudioFileException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		URL url2 = Main.class.getClass().getResource("/Thomas_The_Tank_Engine.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url2);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
+	} catch (LineUnavailableException e) {
+		e.printStackTrace();
+	} catch (UnsupportedAudioFileException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
 	}
 	
 	public static void main(String[] args) {
@@ -99,7 +124,10 @@ public class Main extends Thread implements WindowListener, KeyListener {
 	}
 
 	@Override
-	public void windowActivated(WindowEvent arg0) {}
+	public void windowActivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
 	public void windowClosed(WindowEvent arg0) {
@@ -108,19 +136,34 @@ public class Main extends Thread implements WindowListener, KeyListener {
 	}
 
 	@Override
-	public void windowClosing(WindowEvent arg0) {}
+	public void windowClosing(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
-	public void windowDeactivated(WindowEvent arg0) {}
+	public void windowDeactivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
-	public void windowDeiconified(WindowEvent arg0) {}
+	public void windowDeiconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
-	public void windowIconified(WindowEvent arg0) {}
+	public void windowIconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
-	public void windowOpened(WindowEvent arg0) {}
+	public void windowOpened(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	public static boolean startagain;
 	
@@ -132,9 +175,15 @@ public class Main extends Thread implements WindowListener, KeyListener {
 	}
 
 	@Override
-	public void keyReleased(KeyEvent arg0) {}
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
-	public void keyTyped(KeyEvent arg0) {}
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
